@@ -1,31 +1,35 @@
-// Estudiante.java — clase creada en Semana 2
 public class Estudiante {
- 
-    // Atributos de instancia (privados - encapsulamiento)
+    // Atributos
     private String nombre;
     private int codigo;
     private double nota;
- 
-    // Variable STATIC: compartida por todos los objetos
+
+    // Variable Static: compartida por todos los objetos
     private static int totalEstudiantes = 0;
- 
+
     // Constructor
+    public Estudiante() { }
+
     public Estudiante(String nombre, int codigo, double nota) {
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.nota   = nota;
-        totalEstudiantes++;   // se incrementa en cada objeto creado
+        setNombre(nombre);
+        setCodigo(codigo);
+        setNota(nota);
+        totalEstudiantes++;
     }
  
     // Getters
     public String getNombre() { return nombre; }
     public double getNota()   { return nota; }
- 
+    public int getCodigo()   { return codigo; }
+
+    // Setters
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setCodigo(int codigo) { this.codigo = codigo; }
+    public void setNota(double nota) { this.nota = nota; }
+
+    // Métodos
+    public void mostrarInfo() { System.out.println("Estudiante: " + nombre + " | Nota: " + nota); }
+
     // Método static
     public static int getTotalEstudiantes() { return totalEstudiantes; }
- 
-    // Muestra información del estudiante
-    public void mostrarInfo() {
-        System.out.println("Estudiante: " + nombre + " | Nota: " + nota);
-    }
 }
